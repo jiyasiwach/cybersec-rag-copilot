@@ -48,7 +48,7 @@ const CHOICES: { title: string; body: string }[] = [
   },
   {
     title: 'Hybrid retrieval with Reciprocal Rank Fusion',
-    body: 'Vector search handles paraphrased, conceptual questions; BM25 nails exact IDs like T1059.001 or CVE-2024-3400 that embeddings blur. RRF (k=60) merges the two rankings without tuning weights, and an exact-ID boost pins a matching chunk to position 1.',
+    body: 'Vector search handles paraphrased, conceptual questions; BM25 nails exact IDs like T1059.001 or CVE-2015-5477 that embeddings blur. RRF (k=60) merges the two rankings without tuning weights, and an exact-ID boost pins a matching chunk to position 1.',
   },
   {
     title: 'Two-layer guardrail, before retrieval',

@@ -2,7 +2,7 @@ export interface Example { text: string; attack?: boolean }
 
 export const EXAMPLES: Example[] = [
   { text: 'How do attackers achieve persistence via scheduled tasks?' },
-  { text: 'What is CVE-2024-3400 and what action does CISA require?' },
+  { text: 'What is CVE-2015-5477 and what action does CISA require?' },
   { text: 'How do I prevent SQL injection according to OWASP?' },
   { text: 'How is PowerShell abused by adversaries, and how do I detect it?' },
   { text: 'What are the prevention steps for broken access control?' },

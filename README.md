@@ -7,7 +7,7 @@
 ## What it does
 
 - **Grounded answers, streamed token by token.** Every factual claim carries a `[n]` citation; clicking it opens the exact retrieved chunk and a link to the original source. If the knowledge base doesn't cover the question, the assistant says so instead of guessing.
-- **Hybrid retrieval.** Vector search (ChromaDB, cosine) + BM25 keyword search fused with Reciprocal Rank Fusion, plus an exact-ID boost for `T1059.001`, `CVE-2024-3400`, `A03:2021`. Switchable per request: `hybrid | vector | bm25`.
+- **Hybrid retrieval.** Vector search (ChromaDB, cosine) + BM25 keyword search fused with Reciprocal Rank Fusion, plus an exact-ID boost for `T1059.001`, `CVE-2015-5477`, `A03:2021`. Switchable per request: `hybrid | vector | bm25`.
 - **Guardrail before retrieval.** Free regex heuristics block obvious injections; ambiguous inputs go to a small LLM classifier returning strict JSON. Retrieved context is delimited and declared as data, never instructions. Blocked requests show the verdict, reason and layer.
 - **Metrics on every answer:** retrieval / generation / total latency, tokens, estimated cost.
 - **Eval dashboard:** Hit@5 and MRR for all three retrieval modes, LLM-judged faithfulness and citation accuracy, guardrail block / false-positive rates.
