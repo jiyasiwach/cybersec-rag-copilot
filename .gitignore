@@ -1,0 +1,29 @@
+# secrets
+.env
+backend/.env
+frontend/.env
+frontend/.env.local
+
+# downloaded source data (rebuilt by ingest/fetch_sources.py)
+data/raw/*
+!data/raw/.gitkeep
+
+# vector index + BM25 pickle (rebuilt by ingest/build_index.py)
+chroma/
+backend/chroma/
+backend/data/bm25.pkl
+
+# python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# node
+node_modules/
+frontend/dist/
+
+# editors / OS
+.DS_Store
+.vscode/
+.idea/

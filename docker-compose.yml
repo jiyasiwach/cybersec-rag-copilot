@@ -1,0 +1,25 @@
+# Local run of both services. Requires OPENAI_API_KEY in your shell (export it) or in a root .env.
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+      secrets: [openai_key]
+    env_file: backend/.env
+    environment:
+      FRONTEND_ORIGIN: http://localhost:5173
+    ports: ["8000:8000"]
+
+  frontend:
+    image: node:22-alpine
+    working_dir: /app
+    volumes: ["./frontend:/app"]
+    command: sh -c "npm install && npm run dev -- --host"
+    environment:
+      VITE_API_URL: http://localhost:8000
+    ports: ["5173:5173"]
+    depends_on: [backend]
+
+secrets:
+  openai_key:
+    environment: OPENAI_API_KEY

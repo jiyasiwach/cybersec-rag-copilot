@@ -1,0 +1,11 @@
+fastapi==0.115.5
+uvicorn[standard]==0.32.1
+chromadb==0.5.23
+rank_bm25==0.2.2
+openai==1.58.1
+pydantic==2.10.3
+pydantic-settings==2.6.1
+slowapi==0.1.9
+tiktoken==0.8.0
+httpx==0.28.1
+pytest==8.3.4

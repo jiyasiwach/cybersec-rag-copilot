@@ -1,0 +1,18 @@
+# Render blueprint for the backend (Docker). Set OPENAI_API_KEY in the Render dashboard as a secret;
+# the index is built during the image build, so the key must also be available as a build secret.
+services:
+  - type: web
+    name: cybersec-rag-backend
+    runtime: docker
+    dockerfilePath: backend/Dockerfile
+    dockerContext: .
+    plan: free
+    envVars:
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: FRONTEND_ORIGIN
+        value: https://your-frontend.vercel.app
+      - key: LLM_MODEL
+        value: gpt-4.1-mini
+      - key: EMBEDDING_MODEL
+        value: text-embedding-3-small

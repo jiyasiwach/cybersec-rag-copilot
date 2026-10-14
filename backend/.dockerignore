@@ -1,0 +1,6 @@
+.venv
+.env
+chroma
+data/bm25.pkl
+__pycache__
+.pytest_cache
