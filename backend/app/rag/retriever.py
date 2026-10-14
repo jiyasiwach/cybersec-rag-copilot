@@ -92,7 +92,7 @@ class Retriever:
         self.bm25_ids: list[str] = blob["chunk_ids"]
 
         self.collection = chromadb.PersistentClient(path=str(settings.chroma_path)).get_collection(COLLECTION)
-        self.openai = OpenAI(api_key=settings.openai_api_key)
+        self.openai = OpenAI(api_key=settings.openai_api_key, base_url=settings.openai_base_url or None)
 
     # ---- engines: each returns ranked (chunk_id, score) ----
 

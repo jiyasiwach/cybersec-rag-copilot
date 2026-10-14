@@ -12,6 +12,9 @@ class Settings(BaseSettings):
 
     # OpenAI
     openai_api_key: str = ""
+    # Leave empty for api.openai.com. Set to https://openrouter.ai/api/v1 to use OpenRouter
+    # (then prefix models with the vendor, e.g. openai/gpt-4.1-mini).
+    openai_base_url: str | None = None
     embedding_model: str = "text-embedding-3-small"
     llm_model: str = "gpt-4.1-mini"
 

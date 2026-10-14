@@ -70,7 +70,7 @@ def main() -> None:
 
     t0 = time.time()
     print(f"ChromaDB -> {settings.chroma_path}  (model {settings.embedding_model})")
-    tokens = build_chroma(chunks, OpenAI(api_key=settings.openai_api_key))
+    tokens = build_chroma(chunks, OpenAI(api_key=settings.openai_api_key, base_url=settings.openai_base_url or None))
     print("BM25     ->", settings.bm25_path)
     build_bm25(chunks)
 

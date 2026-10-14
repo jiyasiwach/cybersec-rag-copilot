@@ -9,7 +9,7 @@ from app.llm.provider import StreamResult, Usage
 
 class OpenAIProvider:
     def __init__(self) -> None:
-        self.client = OpenAI(api_key=settings.openai_api_key)
+        self.client = OpenAI(api_key=settings.openai_api_key, base_url=settings.openai_base_url or None)
         self.model = settings.llm_model
 
     def stream(self, system: str, user: str, result: StreamResult) -> Iterator[str]:
