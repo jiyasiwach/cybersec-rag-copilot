@@ -2,7 +2,7 @@
 
 **A cybersecurity chat assistant that answers only from a curated knowledge base — MITRE ATT&CK, OWASP Top 10 (2021) and CISA KEV — with streamed answers, clickable citations, a two-layer prompt-injection guardrail and a built-in eval dashboard.**
 
-🔗 Live demo: _coming soon_ · 🎬 Demo GIF: _coming soon_
+🔗 **Live demo:** https://cybersec-rag-copilot-tan.vercel.app · 🎬 Demo GIF: _coming soon_
 
 ## What it does
 
