@@ -27,3 +27,7 @@ frontend/dist/
 .DS_Store
 .vscode/
 .idea/
+
+# vercel
+.vercel/
+*.tsbuildinfo
