@@ -1,5 +1,6 @@
-# Render blueprint for the backend (Docker). Set OPENAI_API_KEY in the Render dashboard as a secret;
-# the index is built during the image build, so the key must also be available as a build secret.
+# Render blueprint for the backend (Docker).
+# After "Apply", set OPENAI_API_KEY in the service's Environment tab (it is marked sync: false so
+# the value is never stored in git). The index builds on first start (~30 s, ~$0.005).
 services:
   - type: web
     name: cybersec-rag-backend
@@ -7,12 +8,15 @@ services:
     dockerfilePath: backend/Dockerfile
     dockerContext: .
     plan: free
+    healthCheckPath: /api/health
     envVars:
       - key: OPENAI_API_KEY
         sync: false
-      - key: FRONTEND_ORIGIN
-        value: https://your-frontend.vercel.app
+      - key: OPENAI_BASE_URL
+        value: https://openrouter.ai/api/v1
       - key: LLM_MODEL
-        value: gpt-4.1-mini
+        value: openai/gpt-4.1-mini
       - key: EMBEDDING_MODEL
-        value: text-embedding-3-small
+        value: openai/text-embedding-3-small
+      - key: FRONTEND_ORIGIN
+        value: https://cybersec-rag-copilot-tan.vercel.app

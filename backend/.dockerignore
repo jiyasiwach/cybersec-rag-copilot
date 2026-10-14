@@ -1,6 +1,7 @@
 .venv
 .env
 chroma
+start.sh.bak
 data/bm25.pkl
 __pycache__
 .pytest_cache

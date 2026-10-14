@@ -70,7 +70,7 @@ npm run dev                    # http://localhost:5173
 
 Tests: `cd backend && pytest`. Evals: `python -m evals.run_eval` (≈ 50 LLM calls, well under $0.10).
 
-Docker: `export OPENAI_API_KEY=sk-... && docker compose up --build`.
+Docker: `export OPENAI_API_KEY=sk-... && docker compose up --build` (the index is built at image build time when the key is available, otherwise on first start).
 
 ## Deploy
 
