@@ -26,15 +26,17 @@ Knowledge base: 948 chunks — 706 ATT&CK Enterprise techniques, 10 OWASP catego
 
 ## Eval results
 
-Run `python -m evals.run_eval` and paste the summary table here.
+20 questions (MITRE / OWASP / KEV, mix of exact-ID and conceptual), 5 prompt-injection attacks, 2 off-topic questions. `python -m evals.run_eval`, 14 Oct 2026, `openai/gpt-4.1-mini` + `text-embedding-3-small`.
 
 | Mode | Hit@5 | MRR |
 |---|---|---|
-| hybrid | _tbd_ | _tbd_ |
-| vector | _tbd_ | _tbd_ |
-| bm25 | _tbd_ | _tbd_ |
+| **hybrid** | **100%** | **1.000** |
+| vector | 100% | 0.975 |
+| bm25 | 100% | 0.867 |
 
-Faithfulness _tbd_ · Citation accuracy _tbd_ · Attacks blocked _tbd_ · False positives _tbd_
+Faithfulness **1.00** · Citation accuracy **1.00** (LLM-as-judge on hybrid answers) · Attacks blocked **5/5** · Off-topic refused **2/2** · False positives **0/20** · Avg latency **3.3 s** · Avg cost **$0.001 / query**
+
+Hybrid beats either engine alone: BM25 misranks a few conceptual questions, vector search slips on exact IDs; RRF plus the ID boost puts the right document first on every question in the set.
 
 ## Design decisions
 

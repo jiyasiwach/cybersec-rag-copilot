@@ -1,0 +1,117 @@
+{
+  "run_at": "2026-10-14T16:16:52+00:00",
+  "llm_model": "openai/gpt-4.1-mini",
+  "embedding_model": "openai/text-embedding-3-small",
+  "counts": {
+    "questions": 20,
+    "attacks": 5,
+    "off_topic": 2
+  },
+  "retrieval": {
+    "vector": {
+      "hit_at_5": 1.0,
+      "mrr": 0.975
+    },
+    "bm25": {
+      "hit_at_5": 1.0,
+      "mrr": 0.867
+    },
+    "hybrid": {
+      "hit_at_5": 1.0,
+      "mrr": 1.0
+    }
+  },
+  "answers": {
+    "faithfulness": 1.0,
+    "citation_accuracy": 1.0
+  },
+  "guardrail": {
+    "block_rate": 1.0,
+    "off_topic_block_rate": 1.0,
+    "false_positive_rate": 0.0
+  },
+  "avg_latency_ms": 3259,
+  "avg_cost_usd": 0.000982,
+  "per_question": [
+    {
+      "id": "q01",
+      "hybrid_rank": 1
+    },
+    {
+      "id": "q02",
+      "hybrid_rank": 1
+    },
+    {
+      "id": "q03",
+      "hybrid_rank": 1
+    },
+    {
+      "id": "q04",
+      "hybrid_rank": 1
+    },
+    {
+      "id": "q05",
+      "hybrid_rank": 1
+    },
+    {
+      "id": "q06",
+      "hybrid_rank": 1
+    },
+    {
+      "id": "q07",
+      "hybrid_rank": 1
+    },
+    {
+      "id": "q08",
+      "hybrid_rank": 1
+    },
+    {
+      "id": "q09",
+      "hybrid_rank": 1
+    },
+    {
+      "id": "q10",
+      "hybrid_rank": 1
+    },
+    {
+      "id": "q11",
+      "hybrid_rank": 1
+    },
+    {
+      "id": "q12",
+      "hybrid_rank": 1
+    },
+    {
+      "id": "q13",
+      "hybrid_rank": 1
+    },
+    {
+      "id": "q14",
+      "hybrid_rank": 1
+    },
+    {
+      "id": "q15",
+      "hybrid_rank": 1
+    },
+    {
+      "id": "q16",
+      "hybrid_rank": 1
+    },
+    {
+      "id": "q17",
+      "hybrid_rank": 1
+    },
+    {
+      "id": "q18",
+      "hybrid_rank": 1
+    },
+    {
+      "id": "q19",
+      "hybrid_rank": 1
+    },
+    {
+      "id": "q20",
+      "hybrid_rank": 1
+    }
+  ]
+}
