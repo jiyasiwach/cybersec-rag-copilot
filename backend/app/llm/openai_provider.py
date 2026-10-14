@@ -17,6 +17,7 @@ class OpenAIProvider:
             model=self.model,
             messages=[{"role": "system", "content": system}, {"role": "user", "content": user}],
             temperature=0,
+            max_tokens=800,   # concise cited answers; also caps the credit reservation on gateways like OpenRouter
             stream=True,
             stream_options={"include_usage": True},   # final chunk carries token usage
         )
